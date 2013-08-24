@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+    <link rel="stylesheet" href="css/jqmFix.css">
+    <link rel="stylesheet" href="css/jquery.mobile.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- load js -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/jquery.mobile.min.js"></script>
+    <script src="js/vendor/energize.min.js"></script>
+    <script src="js/vendor/parse.min.js"></script>
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script src="js/vendor/leaflet.js"></script>
+    <script src="js/appinit.js"></script>
+    <script src="js/listview.js"></script>
+    <script src="js/detailview.js"></script>
+    <script src="js/mapinit.js"></script>
+</head>
+<body>
+    <div id="container">
+
+        <!--    Fetch -->
+    <div data-role="page" id="fetch">
+        <div data-role="content">
+            <div id="fetching"> 
+                <img class="loaderGif" src="img/loader.gif">
+                <h5>Fetching data ...</h5>
+            </div>
+        </div>
+    </div>
+    <!--     Menu -->
+    <div data-role="page" id="menu">
+        <div data-role="content">
+            <h3>Memories of the Future</h3>
+            <p>This is a location-based cinema project focusing on issues affecting the Hunt's Point community</p>
+            <p><a href="#mapView" data-role="button" data-inline="true" class="clickForMap">Begin</a></p>
+        </div>
+    </div>
+    <!-- Credit -->
+    <div data-role="page" data-add-back-btn="true" id="credits">
+        <div data-role="header" data-position="fixed">
+            <h1>Credits</h1>
+        </div>
+        <div data-role="content">
+            <h3>Leaflet</h3>
+        </div>
+    </div>
+    <!--    Map View -->
+    <div data-role="page" id="mapView">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <a href="#menu">About</a>
+            <h1>Memories of the Future</h1>
+            <a href="#listView">List</a>
+        </div>
+        <div data-role="content">
+            <div id="map">
+            </div>
+            <div id="locatingBox">Please hold on while we're locating you</div>
+        </div>
+        <div data-position="fixed" data-tap-toggle="false" class="customFooter" >
+            <a href="#" id="clientLocate" data-role="button" data-inline="true">Locate</a>
+        </div>
+    </div>
+    <!--    List View -->
+    <div data-role="page" id="listView">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <h1>List View</h1>
+            <a href="#mapView">Map View</a>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-split-icon="gear" data-split-theme="d" class="ui-listview">
+                <li id="forClone" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-alt ui-li-has-thumb ui-btn-up-c">
+                    <div class="ui-btn-inner ui-li ui-li-has-alt" style="margin-left: -85px">
+                        <div class="ui-btn-text">
+                            <a href="#detailView" class="ui-link-inherit" data-parse="hello">
+                                <img src="img/jpeg.jpeg" class="ui-li-thumb">
+                                <h3 id="nodeTitle" class="ui-li-heading"></h3>
+                                <p id="nodeAddress" class="ui-li-desc"></p>
+                                <p id="nodeAuthor" class="ui-li-desc"></p>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--    Detail View -->
+    <div data-role="page" id="detailView">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <h1>Detail View</h1>
+            <a id="backToBefore">Back</a>
+        </div>
+        <div data-role="content">
+            <div id="detailNodeTitle"></div>
+            <div id="detailNodeAddress"></div>
+            <div id="detailNodeVideo">
+                <iframe id="vimeo-player" src="" frameborder="0"></iframe>
+            </div>
+            <div id="detailSeqNum"></div>
+            <div id="detailNodeDesc"></div>
+        </div>
+    </div>
+    <!--    Contribute -->
+    <div data-role="page" id="contribute">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <h1>Contribute</h1>
+        </div>
+        <div data-role="content">
+            <div id="contribute-map">
+            </div>
+        </div>
+        <div data-position="fixed" data-tap-toggle="false" class="customFooter" >
+            <div class="contributeAdd">Add</div>
+        </div>
+    </div>
+
+    </div>
+    <!-- init phonegap -->
+    <script src="cordova.js"></script>
+    <script src="js/phonegapinit.js"></script>
+    <script>
+    app.initialize();
+    </script>
+</body>
+</html>
