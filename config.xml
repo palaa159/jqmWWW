@@ -3,10 +3,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.memories-of-the-future"
         version   = "0.1.5">
-    <name>Memories of the Future</name>
+    <name>Memories of the Future Alpha</name>
 
     <description>
-        Migrate to www
+        Test Alpha
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
