@@ -11,10 +11,11 @@ html,body {
 }
 
 #map {
-	position:absolute!important;
+	position:absolute !important;
+	top:0px !important;
 	left:0;
-	overflow:hidden!important;
-	width:100%!important;
+	overflow:hidden !important;
+	width:100% !important;
 	opacity: 0;
 }
 
@@ -33,4 +34,9 @@ html,body {
 
 .contextualView {
 	font-size: 1.3em;
+}
+
+#detailNodeVideo {
+	background: black;
+	overflow: hidden;
 }

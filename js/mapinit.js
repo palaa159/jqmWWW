@@ -8,13 +8,17 @@ $(document).delegate("#mapView", "pageinit", function() {
 	init();
 	detectUserLocation();
 	$('#map').css({
-		'height': sH - 42
+		'height': sH
 	});
 	$('#clientLocate').click(function() {
 		mapHalfOpacity();
 		$('#locatingBox').fadeIn();
 		clientLocate();
 	});
+});
+
+$(document).delegate("#mapView", "pageshow", function() {
+	map.invalidateSize();
 });
 
 function init() {

@@ -13,23 +13,34 @@ $(document).delegate("#detailView", "pageshow", function() {
 		console.log('back');
 		player.api('pause');
 		// clear detailview
-		
 		$('#vimeo-player').attr('src', '');
 		$('#detailNodeTitle').html('');
 		$('#detailNodeAddress').html('');
 		$('#detailNodeDesc').html('');
 		$('#detailSeqNum').html('');
-		$.mobile.navigate('#' + pageBefore);
+		$.mobile.changePage('#' + pageBefore, {
+			transition: 'slide',
+			reverse: true
+		});
 	});
 	console.log('detailview refreshed');
 	var WIDTH = sW - 32;
 	$('#detailNodeTitle').html(fetchedData[currData].name);
 	$('#detailNodeAddress').html(fetchedData[currData].address);
-	$('#vimeo-player').attr({
+	$('#detailNodeVideo').css({
+		'width': WIDTH,
+		'height': WIDTH*9/16
+	});
+	$('#vimeo-player')
+	.hide()
+	.attr({
 		'width': WIDTH,
 		'height': WIDTH*9/16,
 		'src': url
 	});
+	setTimeout(function() {
+		$('#vimeo-player').fadeIn();
+	}, 2000);
 	// Auto play
 	// setTimeout(function() {
 	// 	player.api('play');

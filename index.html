@@ -28,7 +28,7 @@
         <div data-role="content">
             <div id="fetching"> 
                 <img class="loaderGif" src="img/loader.gif">
-                <h5>Fetching data ...</h5>
+                <h5>Retrieving data ...</h5>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
         <div data-role="content">
             <h3>Memories of the Future</h3>
             <p>This is a location-based cinema project focusing on issues affecting the Hunt's Point community</p>
-            <p><a href="#mapView" data-role="button" data-inline="true" class="clickForMap">Begin</a></p>
+            <p><a href="#mapView" data-role="button" data-inline="true" class="clickForMap" data-transition="slideup">Begin</a></p>
         </div>
     </div>
     <!-- Credit -->
@@ -52,9 +52,9 @@
     <!--    Map View -->
     <div data-role="page" id="mapView">
         <div data-role="header" data-position="fixed" data-tap-toggle="false">
-            <a href="#menu">About</a>
-            <h1>Memories of the Future</h1>
-            <a href="#listView">List</a>
+            <a href="#menu" data-transition="slidedown">About</a>
+            <h1>Hunts Point</h1>
+            <a href="#listView" data-transition="flip">List</a>
         </div>
         <div data-role="content">
             <div id="map">
@@ -69,14 +69,14 @@
     <div data-role="page" id="listView">
         <div data-role="header" data-position="fixed" data-tap-toggle="false">
             <h1>List View</h1>
-            <a href="#mapView">Map View</a>
+            <a href="#mapView" data-transition="flip" data-direction="reverse">Map</a>
         </div>
         <div data-role="content">
             <ul data-role="listview" data-split-icon="gear" data-split-theme="d" class="ui-listview">
                 <li id="forClone" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-alt ui-li-has-thumb ui-btn-up-c">
                     <div class="ui-btn-inner ui-li ui-li-has-alt" style="margin-left: -85px">
                         <div class="ui-btn-text">
-                            <a href="#detailView" class="ui-link-inherit" data-parse="hello">
+                            <a href="#detailView" class="ui-link-inherit" data-transition="slide">
                                 <img src="img/jpeg.jpeg" class="ui-li-thumb">
                                 <h3 id="nodeTitle" class="ui-li-heading"></h3>
                                 <p id="nodeAddress" class="ui-li-desc"></p>
